@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function updateCarousel() {
     const amountToMove = items[0].offsetWidth;
-    track.style.transform = translateX(-${amountToMove * currentIndex}px);
+    track.style.transform = `translateX(-${amountToMove * currentIndex}px)`; // Corrigido aqui
   }
 
   // Parar o carrossel quando o mouse estiver sobre ele
