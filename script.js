@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function updateCarousel() {
     const amountToMove = items[0].offsetWidth;
-    track.style.transform = `translateX(-${amountToMove * currentIndex}px)`; // Corrigido aqui
+    track.style.transform = `translateX(-${amountToMove * currentIndex}px)`;
   }
 
   // Parar o carrossel quando o mouse estiver sobre ele
@@ -43,6 +43,15 @@ document.addEventListener('DOMContentLoaded', () => {
   showMoreButton.addEventListener('click', () => {
     projectsContainer.classList.toggle('show-all');
     showMoreButton.textContent = projectsContainer.classList.contains('show-all') ? 'Mostrar Menos' : 'Saiba Mais';
+  });
+
+  // Mostrar mais certificações
+  const showMoreCertificationsButton = document.getElementById('show-more-certifications');
+  const certificationsContainer = document.querySelector('.certifications');
+
+  showMoreCertificationsButton.addEventListener('click', () => {
+    certificationsContainer.classList.toggle('show-all');
+    showMoreCertificationsButton.textContent = certificationsContainer.classList.contains('show-all') ? 'Mostrar Menos' : 'Saiba Mais';
   });
 
   // Certification Info Display
