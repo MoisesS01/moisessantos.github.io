@@ -98,11 +98,13 @@ section {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  gap: 10px; /* Espaçamento entre os vídeos */
+  overflow: hidden; /* Remove a barra de rolagem */
 }
 
 .project-item {
-  flex: 1 1 calc(33.333% - 20px);
-  margin: 10px;
+  flex: 1 1 calc(33.333% - 20px); /* Ajusta a largura para 3 vídeos por linha */
+  margin: 10px; /* Espaço ao redor dos vídeos */
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -118,88 +120,70 @@ section {
   transform: scale(1.1);
 }
 
-/* Estilo para certificações */
-.certifications {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-
-.certification-item {
-  flex: 1 1 calc(33.333% - 20px);
-  margin: 10px;
-  text-align: center;
-  position: relative;
-}
-
-.certification-item img {
-  max-width: 100%;
-  height: auto;
-  transition: transform 0.3s ease;
-}
-
-.certification-item:hover img {
-  transform: scale(1.1);
-}
-
-#certification-info {
-  display: none;
-  position: absolute;
-  top: 0;
-  right: 0;
-  background-color: rgba(0, 0, 0, 0.8);
-  padding: 10px;
-  width: 50%;
-  color: #fff;
-}
-
-.show-all .certification-item {
-  display: block;
-}
-
-/* Estilo para habilidades */
-.skills {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-
-.skill-item {
-  flex: 1 1 calc(33.333% - 20px);
-  margin: 10px;
-  text-align: center;
-  cursor: pointer;
-}
-
-#skill-info {
-  display: none;
-  position: absolute;
-  top: 0;
-  right: 0;
-  background-color: rgba(0, 0, 0, 0.8);
-  padding: 10px;
-  width: 50%;
-  color: #fff;
-}
-
-/* Estilo para os botões */
-button {
+/* Estilo para o botão "Saiba Mais" */
+#show-more, #show-more-certifications {
   display: block;
   margin: 20px auto;
   padding: 10px 20px;
-  background-color: rgb(20, 19, 19, 0.8);
+  background-color: #008000;
+  color: #fff;
   border: none;
   cursor: pointer;
-  color: rgb(255, 255, 255);
+  width: 100%; /* Adiciona largura completa ao botão */
 }
 
-button:hover {
-  background-color: rgb(20, 19, 19, 0.8);
+#show-more:hover, #show-more-certifications:hover {
+  background-color: #005700;
 }
 
-/* Adaptação para dispositivos móveis */
-@media (max-width: 768px) {
-  .project-item, .certification-item, .skill-item {
-    flex: 1 1 100%;
-  }
+/* Estilo para as certificações */
+.certifications {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.certification-item {
+  position: relative;
+  width: 150px; /* Tamanho ajustado */
+  height: 150px; /* Tamanho ajustado */
+  cursor: pointer;
+}
+
+.certification-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+#certification-info {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 16px;
+}
+
+/* Estilo para as habilidades */
+.skills {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.skill-item {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.skill-item:hover {
+  background-color: #555;
+}
+
+#skill-info {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 16px;
 }
