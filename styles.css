@@ -100,7 +100,6 @@ section {
   justify-content: space-between;
   gap: 10px; /* Espaçamento entre os vídeos */
   overflow: hidden; /* Remove a barra de rolagem */
-  height: 300px; /* Ajuste para mostrar apenas uma linha */
   transition: height 0.3s ease;
 }
 
@@ -127,7 +126,7 @@ section {
   display: block;
   margin: 20px auto;
   padding: 10px 20px;
-  background-color: #008000;
+  background-color: #1c1d1c;
   color: #fff;
   border: none;
   cursor: pointer;
@@ -135,7 +134,7 @@ section {
 }
 
 #show-more:hover, #show-more-certifications:hover {
-  background-color: #005700;
+  background-color: #11a411;
 }
 
 /* Estilo para as certificações */
@@ -144,8 +143,6 @@ section {
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
-  overflow: hidden;
-  height: 300px; /* Ajuste para mostrar apenas uma linha */
   transition: height 0.3s ease;
 }
 
@@ -167,7 +164,7 @@ section {
   margin-top: 20px;
   text-align: center;
   font-size: 16px;
-  display: none;
+  display: none; /* Oculta a informação por padrão */
 }
 
 /* Estilo para as habilidades */
@@ -192,5 +189,5 @@ section {
   margin-top: 20px;
   text-align: center;
   font-size: 16px;
-  display: none;
+  display: none; /* Oculta a informação por padrão */
 }

@@ -1,19 +1,17 @@
 document.addEventListener('DOMContentLoaded', function() {
   // Carrossel de experiências
   const carousel = document.querySelector('.new-carousel-track');
+  const items = document.querySelectorAll('.new-carousel-item');
   let isExpanded = false;
+  let autoScroll;
+  let currentIndex = 0;
 
   function updateCarousel() {
-    const items = document.querySelectorAll('.new-carousel-item');
     const amountToMove = items[0].offsetWidth;
     carousel.style.transform = `translateX(-${amountToMove * currentIndex}px)`;
   }
 
-  let currentIndex = 0;
-  let autoScroll = setInterval(nextSlide, 2000);
-
   function nextSlide() {
-    const items = document.querySelectorAll('.new-carousel-item');
     if (currentIndex < items.length - 1) {
       currentIndex++;
     } else {
@@ -21,6 +19,21 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     updateCarousel();
   }
+
+  function startAutoScroll() {
+    autoScroll = setInterval(nextSlide, 2000);
+  }
+
+  function stopAutoScroll() {
+    clearInterval(autoScroll);
+  }
+
+  // Iniciar o carrossel
+  startAutoScroll();
+
+  // Adicionar eventos de mouse
+  carousel.addEventListener('mouseover', stopAutoScroll);
+  carousel.addEventListener('mouseout', startAutoScroll);
 
   document.querySelectorAll('.new-carousel-item').forEach(item => {
     item.addEventListener('click', () => {
