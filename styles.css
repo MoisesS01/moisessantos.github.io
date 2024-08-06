@@ -1,0 +1,161 @@
+/* Estilo básico para a página */
+body {
+  margin: 0;
+  font-family: 'Roboto Mono', monospace;
+  background-color: rgb(0, 0, 0);
+  color: #fff;
+}
+
+/* Estilo para o índice fixo */
+#navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(20, 19, 19, 0.8);
+  z-index: 1000;
+  text-align: center;
+}
+
+#navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+#navbar ul li {
+  display: inline;
+}
+
+#navbar ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 15px 20px;
+  display: inline-block;
+}
+
+#navbar ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Estilo para as seções */
+section {
+  padding: 60px 20px;
+  margin-top: 60px;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content .text, .content .image, .content .video {
+  flex: 1;
+  padding: 20px;
+}
+
+.content .image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.content .video video {
+  width: 100%;
+  height: auto;
+}
+
+/* Estilo para o novo carrossel */
+.new-carousel {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.new-carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.new-carousel-item {
+  min-width: 100%;
+  text-align: center;
+  transition: transform 0.5s ease-in-out;
+}
+
+.new-carousel-item img {
+  max-width: 100%;
+  height: auto;
+}
+
+.new-carousel-item.expanded {
+  transform: scale(1.5);
+}
+
+/* Estilo para os projetos */
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-height: 900px; /* 3 linhas de vídeos */
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+.project-item {
+  flex: 1 0 30%; /* Altere essa porcentagem para ajustar o tamanho do vídeo */
+  margin: 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+.project-item video {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.project-item:hover video {
+  transform: scale(1.1);
+}
+
+#show-more {
+  display: block;
+  width: 100%;
+  padding: 10px 0;
+  background-color: #131313;
+  color: rgb(255, 255, 255);
+  border: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+.projects.show-all {
+  max-height: none;
+}
+
+/* Estilo para certificações e habilidades */
+.certifications, .skills {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.certification-item, .skill-item {
+  flex: 0 0 33.3333%;
+  text-align: center;
+  padding: 20px;
+  cursor: pointer;
+}
+
+#certification-info, #skill-info {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  display: none;
+}
+
+.green-text {
+  color: #39FF14;
+}
