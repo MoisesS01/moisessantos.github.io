@@ -170,24 +170,32 @@ section {
 /* Estilo para as habilidades */
 .skills {
   display: flex;
-  justify-content: center;
-  gap: 20px;
+  flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
+  gap: 20px; /* Espaçamento entre os itens */
+  justify-content: center; /* Centraliza os itens na linha */
 }
 
+/* Estilo para cada item de habilidade */
 .skill-item {
+  flex: 1 1 calc(14.28% - 20px); /* Ajusta a largura para cerca de 7 itens por linha, considerando o espaçamento */
+  max-width: calc(14.28% - 20px); /* Garante que o item não ultrapasse a largura desejada */
   background-color: #333;
   padding: 20px;
   border-radius: 5px;
   cursor: pointer;
+  box-sizing: border-box; /* Inclui o padding e border no cálculo da largura */
+  text-align: center; /* Centraliza o texto dentro do item */
 }
 
 .skill-item:hover {
   background-color: #555;
 }
 
+/* Estilo para as informações das habilidades */
 #skill-info {
   margin-top: 20px;
   text-align: center;
   font-size: 16px;
   display: none; /* Oculta a informação por padrão */
 }
+
