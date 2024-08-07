@@ -68,6 +68,29 @@ document.addEventListener('DOMContentLoaded', function() {
   // Habilidades
   const skillItems = document.querySelectorAll('.skill-item');
   const skillInfo = document.getElementById('skill-info');
+  const showMoreSkillsButton = document.getElementById('show-more-skills');
+  const allSkillItems = Array.from(skillItems);
+
+  skillItems.forEach((item, index) => {
+    if (index >= 10) { // Mostra apenas os primeiros 10 itens
+      item.classList.add('hidden');
+    }
+  });
+
+  showMoreSkillsButton.addEventListener('click', () => {
+    const hiddenItems = document.querySelectorAll('.skill-item.hidden');
+    if (hiddenItems.length > 0) {
+      hiddenItems.forEach(item => item.classList.remove('hidden'));
+      showMoreSkillsButton.textContent = 'Mostrar Menos';
+    } else {
+      allSkillItems.forEach((item, index) => {
+        if (index >= 10) {
+          item.classList.add('hidden');
+        }
+      });
+      showMoreSkillsButton.textContent = 'Saiba Mais';
+    }
+  });
 
   skillItems.forEach(item => {
     item.addEventListener('mouseover', () => {

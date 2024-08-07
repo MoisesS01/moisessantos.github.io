@@ -191,6 +191,27 @@ section {
   background-color: #555;
 }
 
+/* Oculta itens adicionais */
+.skill-item.hidden {
+  display: none;
+}
+
+/* Estilo para o botão "Saiba Mais" */
+#show-more-skills {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #1c1d1c;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+#show-more-skills:hover {
+  background-color: #11a411;
+}
+
 /* Estilo para as informações das habilidades */
 #skill-info {
   margin-top: 20px;
