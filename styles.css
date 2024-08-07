@@ -48,7 +48,7 @@ section {
 .content {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .content .text, .content .image, .content .video {
@@ -62,6 +62,54 @@ section {
 }
 
 .content .video video {
+  width: 100%;
+  height: auto;
+}
+
+/* Estilo para a seção de início */
+#inicio {
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+}
+
+#inicio .content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  text-align: left;
+  padding: 20px;
+}
+
+#inicio .text {
+  flex: 1;
+}
+
+#inicio h1 {
+  font-size: 4rem; /* Tamanho maior para o nome */
+  font-weight: bold;
+  margin: 0;
+  transition: color 0.3s ease-in-out;
+}
+
+#inicio p {
+  font-size: 1.5rem; /* Tamanho um pouco menor para a descrição */
+  margin: 0;
+  color: #aaa; /* Cor padrão para a descrição */
+  transition: color 0.3s ease-in-out;
+}
+
+#inicio h1:hover,
+#inicio p:hover {
+  color: #11a411; /* Cor verde quando o mouse passa por cima */
+}
+
+#inicio .video {
+  flex: 1;
+}
+
+#inicio .video video {
   width: 100%;
   height: auto;
 }
@@ -188,7 +236,7 @@ section {
 }
 
 .skill-item:hover {
-  background-color: #555;
+  background-color: #11a411;
 }
 
 /* Oculta itens adicionais */
@@ -219,4 +267,3 @@ section {
   font-size: 16px;
   display: none; /* Oculta a informação por padrão */
 }
-
