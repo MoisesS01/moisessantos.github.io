@@ -180,7 +180,7 @@ section {
   flex: 1 1 calc(14.28% - 20px); /* Ajusta a largura para cerca de 7 itens por linha, considerando o espaçamento */
   max-width: calc(14.28% - 20px); /* Garante que o item não ultrapasse a largura desejada */
   background-color: #333;
-  padding: 20px;
+  padding: 10px;
   border-radius: 5px;
   cursor: pointer;
   box-sizing: border-box; /* Inclui o padding e border no cálculo da largura */
