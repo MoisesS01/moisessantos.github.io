@@ -2,9 +2,9 @@ document.addEventListener('DOMContentLoaded', function() {
   // Carrossel de experiências
   const carousel = document.querySelector('.new-carousel-track');
   const items = document.querySelectorAll('.new-carousel-item');
-  let isExpanded = false;
   let autoScroll;
   let currentIndex = 0;
+  let isPaused = false;
 
   function updateCarousel() {
     const amountToMove = items[0].offsetWidth;
@@ -37,14 +37,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
   document.querySelectorAll('.new-carousel-item').forEach(item => {
     item.addEventListener('click', () => {
-      if (!isExpanded) {
-        item.classList.add('expanded');
-        carousel.style.transform = `scale(1.5)`;
+      if (isPaused) {
+        startAutoScroll();
       } else {
-        item.classList.remove('expanded');
-        carousel.style.transform = `scale(1)`;
+        stopAutoScroll();
       }
-      isExpanded = !isExpanded;
+      isPaused = !isPaused;
     });
   });
 
@@ -109,6 +107,10 @@ document.addEventListener('DOMContentLoaded', function() {
   const showMoreButton = document.getElementById('show-more');
   const projectsContainer = document.querySelector('.projects');
 
+  // Configurar o estado inicial do contêiner de projetos
+  projectsContainer.style.height = '300px'; // Define a altura inicial como colapsada
+  showMoreButton.textContent = 'Saiba Mais'; // Define o texto inicial do botão
+
   showMoreButton.addEventListener('click', () => {
     const isExpanded = projectsContainer.classList.toggle('expanded');
     showMoreButton.textContent = isExpanded ? 'Mostrar Menos' : 'Saiba Mais';
@@ -118,6 +120,10 @@ document.addEventListener('DOMContentLoaded', function() {
   // Botão "Saiba Mais" para Certificações
   const showMoreCertificationsButton = document.getElementById('show-more-certifications');
   const certificationsContainer = document.querySelector('.certifications');
+
+  // Configurar o estado inicial do contêiner de certificações
+  certificationsContainer.style.height = '300px'; // Define a altura inicial como colapsada
+  showMoreCertificationsButton.textContent = 'Saiba Mais'; // Define o texto inicial do botão
 
   showMoreCertificationsButton.addEventListener('click', () => {
     const isExpanded = certificationsContainer.classList.toggle('expanded');

@@ -87,22 +87,22 @@ section {
 }
 
 #inicio h1 {
-  font-size: 4rem; /* Tamanho maior para o nome */
+  font-size: 4rem;
   font-weight: bold;
   margin: 0;
   transition: color 0.3s ease-in-out;
 }
 
 #inicio p {
-  font-size: 1.5rem; /* Tamanho um pouco menor para a descrição */
+  font-size: 1.5rem;
   margin: 0;
-  color: #aaa; /* Cor padrão para a descrição */
+  color: #aaa;
   transition: color 0.3s ease-in-out;
 }
 
 #inicio h1:hover,
 #inicio p:hover {
-  color: #11a411; /* Cor verde quando o mouse passa por cima */
+  color: #11a411;
 }
 
 #inicio .video {
@@ -112,6 +112,33 @@ section {
 #inicio .video video {
   width: 100%;
   height: auto;
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+  #inicio .content {
+    flex-direction: column; /* Empilha o conteúdo verticalmente */
+    height: auto;
+  }
+
+  #inicio h1 {
+    font-size: 2.5rem; /* Diminui o tamanho da fonte no celular */
+    text-align: center;
+  }
+
+  #inicio p {
+    font-size: 1rem; /* Diminui o tamanho da descrição no celular */
+    text-align: center;
+  }
+
+  .content .text,
+  .content .video {
+    padding: 10px;
+  }
+
+  .content .text {
+    text-align: center; /* Centraliza o texto no celular */
+  }
 }
 
 /* Estilo para o novo carrossel */
@@ -146,14 +173,14 @@ section {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 10px; /* Espaçamento entre os vídeos */
-  overflow: hidden; /* Remove a barra de rolagem */
+  gap: 10px;
+  overflow: hidden;
   transition: height 0.3s ease;
 }
 
 .project-item {
-  flex: 1 1 calc(25% - 20px); /* Ajusta a largura para 4 vídeos por linha */
-  margin: 10px; /* Espaço ao redor dos vídeos */
+  flex: 1 1 calc(25% - 20px);
+  margin: 10px;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -166,7 +193,18 @@ section {
 }
 
 .project-item:hover video {
-  transform: scale(1.05); /* Reduz o zoom para se ajustar ao novo tamanho */
+  transform: scale(1.05);
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 768px) {
+  .projects {
+    justify-content: center; /* Centraliza os vídeos no celular */
+  }
+
+  .project-item {
+    flex: 1 1 100%; /* Cada vídeo ocupa a largura total da tela no celular */
+  }
 }
 
 /* Estilo para o botão "Saiba Mais" */
@@ -178,7 +216,7 @@ section {
   color: #fff;
   border: none;
   cursor: pointer;
-  width: 100%; /* Adiciona largura completa ao botão */
+  width: 100%;
 }
 
 #show-more:hover, #show-more-certifications:hover {
@@ -196,8 +234,8 @@ section {
 
 .certification-item {
   position: relative;
-  width: 150px; /* Tamanho ajustado */
-  height: 150px; /* Tamanho ajustado */
+  width: 150px;
+  height: 150px;
   cursor: pointer;
 }
 
@@ -212,27 +250,27 @@ section {
   margin-top: 20px;
   text-align: center;
   font-size: 16px;
-  display: none; /* Oculta a informação por padrão */
+  display: none;
 }
 
 /* Estilo para as habilidades */
 .skills {
   display: flex;
-  flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
-  gap: 20px; /* Espaçamento entre os itens */
-  justify-content: center; /* Centraliza os itens na linha */
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
 }
 
 /* Estilo para cada item de habilidade */
 .skill-item {
-  flex: 1 1 calc(14.28% - 20px); /* Ajusta a largura para cerca de 7 itens por linha, considerando o espaçamento */
-  max-width: calc(14.28% - 20px); /* Garante que o item não ultrapasse a largura desejada */
+  flex: 1 1 calc(14.28% - 20px);
+  max-width: calc(14.28% - 20px);
   background-color: #333;
   padding: 10px;
   border-radius: 5px;
   cursor: pointer;
-  box-sizing: border-box; /* Inclui o padding e border no cálculo da largura */
-  text-align: center; /* Centraliza o texto dentro do item */
+  box-sizing: border-box;
+  text-align: center;
 }
 
 .skill-item:hover {
@@ -242,6 +280,14 @@ section {
 /* Oculta itens adicionais */
 .skill-item.hidden {
   display: none;
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 768px) {
+  .skill-item {
+    flex: 1 1 45%; /* Dois itens por linha no celular */
+    max-width: 45%;
+  }
 }
 
 /* Estilo para o botão "Saiba Mais" */
@@ -265,5 +311,15 @@ section {
   margin-top: 20px;
   text-align: center;
   font-size: 16px;
-  display: none; /* Oculta a informação por padrão */
+  display: none;
+}
+
+.certifications.expanded {
+  height: auto; /* Expande para mostrar todos os itens */
+}
+
+.certifications {
+  height: 300px; /* Altura fixa para a versão colapsada */
+  overflow: hidden; /* Oculta itens excedentes */
+  transition: height 0.3s ease;
 }
