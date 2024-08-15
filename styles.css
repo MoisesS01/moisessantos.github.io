@@ -51,7 +51,9 @@ section {
   justify-content: space-between;
 }
 
-.content .text, .content .image, .content .video {
+.content .text,
+.content .image,
+.content .video {
   flex: 1;
   padding: 20px;
 }
@@ -117,17 +119,20 @@ section {
 /* Responsividade para dispositivos móveis */
 @media (max-width: 768px) {
   #inicio .content {
-    flex-direction: column; /* Empilha o conteúdo verticalmente */
+    flex-direction: column;
+    /* Empilha o conteúdo verticalmente */
     height: auto;
   }
 
   #inicio h1 {
-    font-size: 2.5rem; /* Diminui o tamanho da fonte no celular */
+    font-size: 2.5rem;
+    /* Diminui o tamanho da fonte no celular */
     text-align: center;
   }
 
   #inicio p {
-    font-size: 1rem; /* Diminui o tamanho da descrição no celular */
+    font-size: 1rem;
+    /* Diminui o tamanho da descrição no celular */
     text-align: center;
   }
 
@@ -137,7 +142,8 @@ section {
   }
 
   .content .text {
-    text-align: center; /* Centraliza o texto no celular */
+    text-align: center;
+    /* Centraliza o texto no celular */
   }
 }
 
@@ -199,16 +205,19 @@ section {
 /* Ajustes para telas menores */
 @media (max-width: 768px) {
   .projects {
-    justify-content: center; /* Centraliza os vídeos no celular */
+    justify-content: center;
+    /* Centraliza os vídeos no celular */
   }
 
   .project-item {
-    flex: 1 1 100%; /* Cada vídeo ocupa a largura total da tela no celular */
+    flex: 1 1 100%;
+    /* Cada vídeo ocupa a largura total da tela no celular */
   }
 }
 
 /* Estilo para o botão "Saiba Mais" */
-#show-more, #show-more-certifications {
+#show-more,
+#show-more-certifications {
   display: block;
   margin: 20px auto;
   padding: 10px 20px;
@@ -219,7 +228,8 @@ section {
   width: 100%;
 }
 
-#show-more:hover, #show-more-certifications:hover {
+#show-more:hover,
+#show-more-certifications:hover {
   background-color: #11a411;
 }
 
@@ -285,7 +295,8 @@ section {
 /* Ajustes para telas menores */
 @media (max-width: 768px) {
   .skill-item {
-    flex: 1 1 45%; /* Dois itens por linha no celular */
+    flex: 1 1 45%;
+    /* Dois itens por linha no celular */
     max-width: 45%;
   }
 }
@@ -315,11 +326,29 @@ section {
 }
 
 .certifications.expanded {
-  height: auto; /* Expande para mostrar todos os itens */
+  height: auto;
+  /* Expande para mostrar todos os itens */
 }
 
 .certifications {
-  height: 300px; /* Altura fixa para a versão colapsada */
-  overflow: hidden; /* Oculta itens excedentes */
+  height: 300px;
+  /* Altura fixa para a versão colapsada */
+  overflow: hidden;
+  /* Oculta itens excedentes */
   transition: height 0.3s ease;
+}
+
+/* ícones do LinkedIn e GitHub*/
+
+.social-icon {
+  color: white;
+  background-color: black;
+  padding: 10px;
+  border-radius: 50%;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: green;
+  background-color: white;
 }
